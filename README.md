@@ -57,11 +57,11 @@ Run to create a new virtual environment (do not forget to activate afterwards):
 Download and install required software:
 
     ./scripts/install_packages.sh
-> No changes here.
+> No changes here (but I had to install a different pytorch version because it wasn't working with my laptop (didn't adjust that though because I think this is mostly a me issue))
 
 Additionally run: 
 `pip install -r requirements.txt`
-> To make sure all the needed dependencies are downloaded (especially for the python programm later)
+> To make sure all the needed dependencies are downloaded (for the python programm later)
 
 Download data: [wow.tgz](https://huggingface.co/datasets/RUCAIBox/Open-Dialogue/resolve/main/wow.tgz)
 > I did not manage an automatic download because of some huggingface and xet issues which made manual download a lot easier in this case. After downloading, the folder just needs to be put in the current workdirectory and then the script can be run.
@@ -81,6 +81,10 @@ Train the model:
     ./scripts/train.sh
 > I only added the flag '--save_perp_log' and then changed some of the values according to the need (i.e. change of dropout, modelname etc.)
 (Ultimately I trained with dropout rates of 0.0, 0.2, 0.5, 0.8, 1.0)
+
+Generate (sample) some text from a trained model with:
+
+    ./scripts/generate.sh
 
 Run to create tables and plots for training, validation and test perplexity (note: logs created during training are needed!) 
 
