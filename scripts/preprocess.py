@@ -4,6 +4,7 @@ import sys
 import time
 import argparse
 import logging
+import html
 
 from collections import Counter
 from sacremoses import MosesTokenizer
@@ -11,7 +12,7 @@ from itertools import chain
 
 from nltk.tokenize import sent_tokenize
 import nltk
-nltk.download('punkt')
+nltk.download('punkt_tab') # changed this due to getting error messages
 
 
 def parse_args():
@@ -51,6 +52,7 @@ def main():
     for line in lines:
         if args.tokenize:
             t = tokenizer.tokenize(line)
+            t = [html.unescape(token) for token in t]  # Unescape HTML entities
         else:
             t = line.split()
         all_tokens.append(t)
