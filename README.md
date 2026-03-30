@@ -71,9 +71,9 @@ Run to unpack and preprocess data:
     ./scripts/download_data.sh
 > The tgz file is unpacked and then the target file is moved to the correct folder, and the unneeded files are deleted again. I used the already existing preprocessing files with some minor adjustments so some HTML elements (such as quotation marks) were correctly decoded (I also added a flag into data.py to ignore some of the encoding issues and not raise an error every time and it didn't pose any problems further down the line). Then the vocab limit is applied and the text (total of 10'000 lines) is split into training, validation and test (80-10-10). 
 
-DO NOT RUN (only informative):
+Note that this file in tools has been overwritten (in download_data.sh) with the one from this repository to allow the changes made to be used:
 
-    main.py 
+    mt-exercise-02\tools\pytorch-examples\word_language_model\main.py
 >Added a flag that saves perplexities to a csv. The function stored the perplexties in dictionaries while the training is run (as they are output anyways already so I can also store them at the same time) using the epoch as the key and the perplexity as the value. At the end, all these perplexties are saved to a csv file (with the dropout rate in file name and title for easier distinction).
 
 Train the model:

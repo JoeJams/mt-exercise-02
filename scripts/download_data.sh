@@ -51,3 +51,7 @@ cat $data/wow/processed/dia.cleaned.txt | python $base/scripts/preprocess.py --v
 head -n 1000 $data/wow/processed/dia.preprocessed.txt | tail -n 1000 > $data/wow/splits/valid.txt
 head -n 1000 $data/wow/processed/dia.preprocessed.txt | tail -n 1000 > $data/wow/splits/test.txt
 tail -n 8000 $data/wow/processed/dia.preprocessed.txt | head -n 8000 > $data/wow/splits/train.txt
+
+
+# Replace the main.py in tools with the one from the repos
+cp $base/scripts/main.py $tools/pytorch-examples/word_language_model/main.py
