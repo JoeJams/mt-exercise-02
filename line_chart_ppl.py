@@ -17,6 +17,15 @@ import argparse
 
 
 def read_perp_logs(log_dir):
+    '''
+    Read in all the log files in the specified directory and extract the training, validation and test perplexities for each dropout rate.
+    Args:
+        log_dir (str): Directory where the log files are located.
+    Returns:
+        training_ppls (dict): Dictionary with dropout rates as keys and lists of training perplexities as values.
+        val_ppls (dict): Dictionary with dropout rates as keys and lists of validation perplexities
+        test_ppls (dict): Dictionary with dropout rates as keys and final test perplexities as values.
+    '''
     training_ppls = {}
     val_ppls = {}
     test_ppls = {}
@@ -37,9 +46,16 @@ def read_perp_logs(log_dir):
     return training_ppls, val_ppls, test_ppls
 
 def create_tables(training_ppls, val_ppls, test_ppls):
-    # Create a table with first column as epochs and the other columns as the different dropout rates
-    # Save three tables for training, validation and test perplexities
-    
+    '''
+    Create tables for training, validation and test perplexities and save them as csv files.
+    Args:
+        training_ppls (dict): Dictionary with dropout rates as keys and lists of training perplexities as values.
+        val_ppls (dict): Dictionary with dropout rates as keys and lists of validation perplexities as values.
+        test_ppls (dict): Dictionary with dropout rates as keys and final test perplexities as values.
+    Returns:
+        None
+    '''
+
     # Check if we have data to process
     if not training_ppls or not val_ppls:
         print("No perplexity data found. Ensure log files are in the correct format.")
@@ -62,6 +78,16 @@ def create_tables(training_ppls, val_ppls, test_ppls):
     print("Tables created successfully: training_perplexity.csv, validation_perplexity.csv, test_perplexity.csv")
 
 def plot_perplexities(training_ppls, val_ppls, save_plots=True, show_plots=False):
+    '''
+    Create line plots for training and validation perplexities over epochs for different dropout rates.
+    Args:
+        training_ppls (dict): Dictionary with dropout rates as keys and lists of training perplexities
+        val_ppls (dict): Dictionary with dropout rates as keys and lists of validation perplexities as values.
+        save_plots (bool): Flag to save the plots as png files.
+        show_plots (bool): Flag to display the plots after creation.
+    Returns:
+        None
+    '''
     # Create two separate plots for training and validation perplexities
     plt.figure(figsize=(12, 6))
     for dropout, training_ppl in training_ppls.items():
