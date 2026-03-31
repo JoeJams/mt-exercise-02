@@ -51,13 +51,14 @@ Generate (sample) some text from a trained model with:
 
 Run to create a new virtual environment (do not forget to activate afterwards!):
 
-    ./scripts/make_virtualenv.sh
-> I made some minor changes for compatibility with my device (I used git bash but there were still some issues with my device and I had to change some stuff away from UNIX) (I hope it still works for other devices but I couldn't test it, otherwise the original script should be used instead).
+    ./scripts/make_virtualenv.sh (recommended usage on UNIX)
+    ./scripts/make_virtualenv_win.sh (in case of compatibility issues with UNIX on Windows)
+> I made some minor changes for compatibility with my device (I used git bash but there were still some issues with my device and I had to change some stuff away from UNIX as I had some issues with it) and therefore created and adjusted second version. Ideally, the first version should still be used (in accordance to original exercise setup), but I added the one I used. (I do think the rest should work fine because this is just the virtual environment setup, but I obviously wasn't able to test it).
 
 Download and install required software:
 
     ./scripts/install_packages.sh
-> No changes here (but I had to install a different pytorch version because it wasn't working with my laptop (didn't adjust that though because I think this is mostly a me issue))
+> No changes here (but I had to install a different pytorch version because it wasn't working with my laptop (didn't adjust that though because I think this is mostly a me issue and didn't want to change overall dependencies))
 
 Additionally run: 
 `pip install -r requirements.txt`
