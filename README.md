@@ -10,36 +10,7 @@ This repo shows how to train neural language models using [Pytorch example code]
 
     `pip install virtualenv`
 
-# Steps
-
-Clone this repository in the desired place:
-
-    git clone https://github.com/marcamsler1/mt-exercise-02
-    cd mt-exercise-02
-
-Create a new virtualenv that uses Python 3. Please make sure to run this command outside of any virtual Python environment:
-
-    ./scripts/make_virtualenv.sh
-
-**Important**: Then activate the env by executing the `source` command that is output by the shell script above.
-
-Download and install required software:
-
-    ./scripts/install_packages.sh
-
-Download and preprocess data:
-
-    ./scripts/download_data.sh
-
-Train a model:
-
-    ./scripts/train.sh
-
-The training process can be interrupted at any time, and the best checkpoint will always be saved.
-
-Generate (sample) some text from a trained model with:
-
-    ./scripts/generate.sh
+  -> This adjusted version can technically also be run with Windows (Git Bash) but original configuration is still better.
 
 # Reported Changes and Instructions 
 <b>Adjusted from above for changes and additions by me </b>
