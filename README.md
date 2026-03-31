@@ -47,9 +47,9 @@ Generate (sample) some text from a trained model with:
 ## Steps
     git clone https://github.com/JoeJams/mt-exercise-02.git
     cd mt-exercise-02
-> Clone into the forked repository and move to correct the cloned folder
+> Clone into the forked repository and move to correct folder
 
-Run to create a new virtual environment (do not forget to activate afterwards):
+Run to create a new virtual environment (do not forget to activate afterwards!):
 
     ./scripts/make_virtualenv.sh
 > I made some minor changes for compatibility with my device (I used git bash but there were still some issues with my device and I had to change some stuff away from UNIX) (I hope it still works for other devices but I couldn't test it, otherwise the original script should be used instead).
